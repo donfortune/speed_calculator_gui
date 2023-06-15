@@ -36,10 +36,10 @@ class SpeedCalculator(QWidget):  #inherit from qwidget, because it creates windo
     def calculate_speed(self):
         distance = float(self.distance_line_edit.text())
         time = float(self.time_hours_line_edit.text())
-        if self.combo == 'Meters(Km)':
+        if self.combo.currentText() == 'Meters(Km)':
             result = distance / time
             self.output_label.setText(f'Speed: {result} m/s')
-        elif self.combo == 'Miles':
+        elif self.combo.currentText() == 'Miles':
             result = distance / (time * 0.621371)
             self.output_label.setText(f'Speed: {result} mph')
 
